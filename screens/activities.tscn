@@ -1,0 +1,215 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://fonts/monogram.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://screens/activities.gd" type="Script" id=2]
+[ext_resource path="res://images/activities-atlas.png" type="Texture" id=4]
+
+[sub_resource type="Gradient" id=30]
+interpolation_mode = 1
+offsets = PoolRealArray( 1 )
+colors = PoolColorArray( 1, 1, 1, 0.501961 )
+
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 30 )
+width = 360
+
+[sub_resource type="DynamicFont" id=31]
+size = 80
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=4]
+default_font = SubResource( 31 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 80
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=8]
+default_font = SubResource( 20 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1.36422e-12, 1.36422e-12, 341, 341 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 341, 1.36422e-12, 341, 341 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 682, 1.36422e-12, 341, 341 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1.36422e-12, 341, 341, 341 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 341, 341, 341, 341 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 682, 341, 341, 341 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1.36422e-12, 682, 341, 341 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 341, 682, 341, 341 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 682, 682, 341, 341 )
+
+[node name="ActivitiesScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -413, -114 )
+script = ExtResource( 2 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 360.0
+margin_bottom = 640.0
+color = Color( 1, 0.333333, 0.443137, 1 )
+
+[node name="Back" type="Node2D" parent="."]
+
+[node name="BackButton" type="TextureButton" parent="Back"]
+margin_top = 548.0
+margin_right = 360.0
+margin_bottom = 640.0
+texture_normal = SubResource( 6 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="Back"]
+margin_top = 557.0
+margin_right = 360.0
+margin_bottom = 637.0
+theme = SubResource( 4 )
+custom_colors/font_color = Color( 0.47451, 0.47451, 0.47451, 1 )
+text = "BACK"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Title" type="Node2D" parent="."]
+
+[node name="Border" type="ColorRect" parent="Title"]
+margin_right = 360.0
+margin_bottom = 96.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Background" type="ColorRect" parent="Title"]
+margin_right = 360.0
+margin_bottom = 92.0
+color = Color( 0.615686, 0.00784314, 0.0980392, 1 )
+
+[node name="Label" type="Label" parent="Title"]
+margin_top = 12.0
+margin_right = 360.0
+margin_bottom = 92.0
+theme = SubResource( 8 )
+text = "ACTIVITIES"
+align = 1
+
+[node name="Buttons" type="Node2D" parent="."]
+scale = Vector2( 0.333, 0.333 )
+
+[node name="GridContainer" type="GridContainer" parent="Buttons"]
+margin_left = 24.0
+margin_top = 390.0
+margin_right = 686.0
+margin_bottom = 465.0
+custom_constants/vseparation = 60
+columns = 3
+
+[node name="Button1" type="TextureButton" parent="Buttons/GridContainer"]
+margin_right = 341.0
+margin_bottom = 341.0
+rect_pivot_offset = Vector2( -578, 172 )
+size_flags_horizontal = 2
+texture_normal = SubResource( 21 )
+
+[node name="Button2" type="TextureButton" parent="Buttons/GridContainer"]
+margin_left = 345.0
+margin_right = 686.0
+margin_bottom = 341.0
+rect_pivot_offset = Vector2( -578, 172 )
+size_flags_horizontal = 2
+texture_normal = SubResource( 22 )
+
+[node name="Button3" type="TextureButton" parent="Buttons/GridContainer"]
+margin_left = 690.0
+margin_right = 1031.0
+margin_bottom = 341.0
+rect_pivot_offset = Vector2( -578, 172 )
+size_flags_horizontal = 2
+texture_normal = SubResource( 23 )
+
+[node name="Button4" type="TextureButton" parent="Buttons/GridContainer"]
+margin_top = 401.0
+margin_right = 341.0
+margin_bottom = 742.0
+rect_pivot_offset = Vector2( -578, 172 )
+size_flags_horizontal = 2
+texture_normal = SubResource( 24 )
+
+[node name="Button5" type="TextureButton" parent="Buttons/GridContainer"]
+margin_left = 345.0
+margin_top = 401.0
+margin_right = 686.0
+margin_bottom = 742.0
+rect_pivot_offset = Vector2( -578, 172 )
+size_flags_horizontal = 2
+texture_normal = SubResource( 25 )
+
+[node name="Button6" type="TextureButton" parent="Buttons/GridContainer"]
+margin_left = 690.0
+margin_top = 401.0
+margin_right = 1031.0
+margin_bottom = 742.0
+rect_pivot_offset = Vector2( -578, 172 )
+size_flags_horizontal = 2
+texture_normal = SubResource( 26 )
+
+[node name="Button7" type="TextureButton" parent="Buttons/GridContainer"]
+margin_top = 802.0
+margin_right = 341.0
+margin_bottom = 1143.0
+rect_pivot_offset = Vector2( -578, 172 )
+size_flags_horizontal = 2
+texture_normal = SubResource( 27 )
+
+[node name="Button8" type="TextureButton" parent="Buttons/GridContainer"]
+margin_left = 345.0
+margin_top = 802.0
+margin_right = 686.0
+margin_bottom = 1143.0
+rect_pivot_offset = Vector2( -578, 172 )
+size_flags_horizontal = 2
+texture_normal = SubResource( 28 )
+
+[node name="Button9" type="TextureButton" parent="Buttons/GridContainer"]
+margin_left = 690.0
+margin_top = 802.0
+margin_right = 1031.0
+margin_bottom = 1143.0
+rect_pivot_offset = Vector2( -578, 172 )
+size_flags_horizontal = 2
+texture_normal = SubResource( 29 )

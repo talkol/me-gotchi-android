@@ -1,0 +1,90 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://fonts/monogram.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://screens/activity_item.gd" type="Script" id=2]
+[ext_resource path="res://images/activities-atlas.png" type="Texture" id=3]
+
+[sub_resource type="Gradient" id=5]
+interpolation_mode = 1
+offsets = PoolRealArray( 1 )
+colors = PoolColorArray( 1, 1, 1, 0.501961 )
+
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 5 )
+width = 360
+
+[sub_resource type="DynamicFont" id=3]
+size = 80
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=9]
+default_font = SubResource( 3 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 80
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=10]
+default_font = SubResource( 7 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1.36422e-12, 1.36422e-12, 341, 341 )
+
+[node name="ActivityItemScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -755, 72 )
+script = ExtResource( 2 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 360.0
+margin_bottom = 640.0
+color = Color( 1, 0.333333, 0.443137, 1 )
+
+[node name="Back" type="Node2D" parent="."]
+
+[node name="BackButton" type="TextureButton" parent="Back"]
+margin_top = 548.0
+margin_right = 360.0
+margin_bottom = 640.0
+texture_normal = SubResource( 8 )
+expand = true
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="Back"]
+margin_top = 557.0
+margin_right = 360.0
+margin_bottom = 637.0
+theme = SubResource( 9 )
+custom_colors/font_color = Color( 0.47451, 0.47451, 0.47451, 1 )
+text = "BACK"
+align = 1
+
+[node name="Title" type="Node2D" parent="."]
+
+[node name="Border" type="ColorRect" parent="Title"]
+margin_right = 360.0
+margin_bottom = 96.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Background" type="ColorRect" parent="Title"]
+margin_right = 360.0
+margin_bottom = 92.0
+color = Color( 0.615686, 0.00784314, 0.0980392, 1 )
+
+[node name="Label" type="Label" parent="Title"]
+margin_top = 12.0
+margin_right = 360.0
+margin_bottom = 92.0
+theme = SubResource( 10 )
+text = "ACTIV ITEM"
+align = 1
+
+[node name="Button" type="TextureButton" parent="."]
+margin_left = 7.0
+margin_top = 149.0
+margin_right = 348.0
+margin_bottom = 490.0
+texture_normal = SubResource( 11 )

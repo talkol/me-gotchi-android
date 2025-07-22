@@ -1,0 +1,338 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://fonts/monogram.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://screens/stats.gd" type="Script" id=2]
+[ext_resource path="res://images/stats-atlas.png" type="Texture" id=3]
+[ext_resource path="res://images/progress-bar-atlas.png" type="Texture" id=4]
+
+[sub_resource type="Gradient" id=18]
+interpolation_mode = 1
+offsets = PoolRealArray( 1 )
+colors = PoolColorArray( 1, 1, 1, 0.501961 )
+
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 18 )
+width = 360
+
+[sub_resource type="DynamicFont" id=19]
+size = 80
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=4]
+default_font = SubResource( 19 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 80
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=8]
+default_font = SubResource( 20 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1.36422e-12, 682, 341, 341 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 341, 682, 341, 341 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 682, 1.36422e-12, 341, 341 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 341, 1.36422e-12, 341, 341 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 682, 682, 341, 341 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 4 )
+region = Rect2( 2, 38, 156, 20 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 4 )
+region = Rect2( 2, 6, 156, 20 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 4 )
+region = Rect2( 2, 38, 156, 20 )
+
+[node name="StatsScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -413, -114 )
+script = ExtResource( 2 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 360.0
+margin_bottom = 640.0
+color = Color( 0.0941176, 0.772549, 0.835294, 1 )
+
+[node name="Back" type="Node2D" parent="."]
+
+[node name="BackButton" type="TextureButton" parent="Back"]
+margin_top = 548.0
+margin_right = 360.0
+margin_bottom = 640.0
+texture_normal = SubResource( 6 )
+expand = true
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="Back"]
+margin_top = 557.0
+margin_right = 360.0
+margin_bottom = 637.0
+theme = SubResource( 4 )
+custom_colors/font_color = Color( 0.47451, 0.47451, 0.47451, 1 )
+text = "BACK"
+align = 1
+
+[node name="Title" type="Node2D" parent="."]
+
+[node name="Border" type="ColorRect" parent="Title"]
+margin_right = 360.0
+margin_bottom = 96.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Background" type="ColorRect" parent="Title"]
+margin_right = 360.0
+margin_bottom = 92.0
+color = Color( 0.266667, 0.407843, 0.666667, 1 )
+
+[node name="Label" type="Label" parent="Title"]
+margin_top = 12.0
+margin_right = 360.0
+margin_bottom = 92.0
+theme = SubResource( 8 )
+text = "STATS"
+align = 1
+
+[node name="Stats" type="Node2D" parent="."]
+
+[node name="ColumnsContainer" type="HBoxContainer" parent="Stats"]
+margin_left = 25.0
+margin_top = 130.0
+margin_right = 330.0
+margin_bottom = 515.0
+
+[node name="IconsContainer" type="VBoxContainer" parent="Stats/ColumnsContainer"]
+margin_right = 70.0
+margin_bottom = 385.0
+rect_min_size = Vector2( 70, 1.36422e-12 )
+
+[node name="Icon1" type="TextureRect" parent="Stats/ColumnsContainer/IconsContainer"]
+margin_right = 70.0
+margin_bottom = 73.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 21 )
+expand = true
+stretch_mode = 5
+
+[node name="Icon2" type="TextureRect" parent="Stats/ColumnsContainer/IconsContainer"]
+margin_top = 77.0
+margin_right = 70.0
+margin_bottom = 151.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 22 )
+expand = true
+stretch_mode = 5
+
+[node name="Icon3" type="TextureRect" parent="Stats/ColumnsContainer/IconsContainer"]
+margin_top = 155.0
+margin_right = 70.0
+margin_bottom = 229.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 29 )
+expand = true
+stretch_mode = 5
+
+[node name="Icon4" type="TextureRect" parent="Stats/ColumnsContainer/IconsContainer"]
+margin_top = 233.0
+margin_right = 70.0
+margin_bottom = 307.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 30 )
+expand = true
+stretch_mode = 5
+
+[node name="Icon5" type="TextureRect" parent="Stats/ColumnsContainer/IconsContainer"]
+margin_top = 311.0
+margin_right = 70.0
+margin_bottom = 385.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 31 )
+expand = true
+stretch_mode = 5
+
+[node name="ProgressBarsContainer" type="VBoxContainer" parent="Stats/ColumnsContainer"]
+margin_left = 74.0
+margin_right = 305.0
+margin_bottom = 385.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer1" type="MarginContainer" parent="Stats/ColumnsContainer/ProgressBarsContainer"]
+margin_right = 231.0
+margin_bottom = 73.0
+size_flags_vertical = 3
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+
+[node name="ProgressBar1" type="TextureProgress" parent="Stats/ColumnsContainer/ProgressBarsContainer/MarginContainer1"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 231.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 1.36422e-12, 30 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+max_value = 10.0
+value = 5.0
+texture_under = SubResource( 27 )
+texture_over = SubResource( 26 )
+texture_progress = SubResource( 28 )
+texture_progress_offset = Vector2( 1.36422e-12, 1.36422e-12 )
+tint_under = Color( 0.34902, 0.0588235, 0, 1 )
+tint_over = Color( 0.34902, 0.0588235, 0, 1 )
+tint_progress = Color( 0.85098, 0.227451, 0.262745, 1 )
+nine_patch_stretch = true
+stretch_margin_left = 6
+stretch_margin_top = 6
+stretch_margin_right = 6
+stretch_margin_bottom = 6
+
+[node name="MarginContainer2" type="MarginContainer" parent="Stats/ColumnsContainer/ProgressBarsContainer"]
+margin_top = 77.0
+margin_right = 231.0
+margin_bottom = 151.0
+size_flags_vertical = 3
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+
+[node name="ProgressBar2" type="TextureProgress" parent="Stats/ColumnsContainer/ProgressBarsContainer/MarginContainer2"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 231.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 1.36422e-12, 30 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+max_value = 10.0
+value = 5.0
+texture_under = SubResource( 27 )
+texture_over = SubResource( 26 )
+texture_progress = SubResource( 28 )
+texture_progress_offset = Vector2( 1.36422e-12, 1.36422e-12 )
+tint_under = Color( 0.34902, 0.0588235, 0, 1 )
+tint_over = Color( 0.34902, 0.0588235, 0, 1 )
+tint_progress = Color( 0.85098, 0.227451, 0.262745, 1 )
+nine_patch_stretch = true
+stretch_margin_left = 6
+stretch_margin_top = 6
+stretch_margin_right = 6
+stretch_margin_bottom = 6
+
+[node name="MarginContainer3" type="MarginContainer" parent="Stats/ColumnsContainer/ProgressBarsContainer"]
+margin_top = 155.0
+margin_right = 231.0
+margin_bottom = 229.0
+size_flags_vertical = 3
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+
+[node name="ProgressBar3" type="TextureProgress" parent="Stats/ColumnsContainer/ProgressBarsContainer/MarginContainer3"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 231.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 1.36422e-12, 30 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+max_value = 10.0
+value = 5.0
+texture_under = SubResource( 27 )
+texture_over = SubResource( 26 )
+texture_progress = SubResource( 28 )
+texture_progress_offset = Vector2( 1.36422e-12, 1.36422e-12 )
+tint_under = Color( 0.34902, 0.0588235, 0, 1 )
+tint_over = Color( 0.34902, 0.0588235, 0, 1 )
+tint_progress = Color( 0.85098, 0.227451, 0.262745, 1 )
+nine_patch_stretch = true
+stretch_margin_left = 6
+stretch_margin_top = 6
+stretch_margin_right = 6
+stretch_margin_bottom = 6
+
+[node name="MarginContainer4" type="MarginContainer" parent="Stats/ColumnsContainer/ProgressBarsContainer"]
+margin_top = 233.0
+margin_right = 231.0
+margin_bottom = 307.0
+size_flags_vertical = 3
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+
+[node name="ProgressBar4" type="TextureProgress" parent="Stats/ColumnsContainer/ProgressBarsContainer/MarginContainer4"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 231.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 1.36422e-12, 30 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+max_value = 10.0
+value = 5.0
+texture_under = SubResource( 27 )
+texture_over = SubResource( 26 )
+texture_progress = SubResource( 28 )
+texture_progress_offset = Vector2( 1.36422e-12, 1.36422e-12 )
+tint_under = Color( 0.34902, 0.0588235, 0, 1 )
+tint_over = Color( 0.34902, 0.0588235, 0, 1 )
+tint_progress = Color( 0.85098, 0.227451, 0.262745, 1 )
+nine_patch_stretch = true
+stretch_margin_left = 6
+stretch_margin_top = 6
+stretch_margin_right = 6
+stretch_margin_bottom = 6
+
+[node name="MarginContainer5" type="MarginContainer" parent="Stats/ColumnsContainer/ProgressBarsContainer"]
+margin_top = 311.0
+margin_right = 231.0
+margin_bottom = 385.0
+size_flags_vertical = 3
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+
+[node name="ProgressBar5" type="TextureProgress" parent="Stats/ColumnsContainer/ProgressBarsContainer/MarginContainer5"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 231.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 1.36422e-12, 30 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+max_value = 10.0
+value = 5.0
+texture_under = SubResource( 27 )
+texture_over = SubResource( 26 )
+texture_progress = SubResource( 28 )
+texture_progress_offset = Vector2( 1.36422e-12, 1.36422e-12 )
+tint_under = Color( 0.34902, 0.0588235, 0, 1 )
+tint_over = Color( 0.34902, 0.0588235, 0, 1 )
+tint_progress = Color( 0.85098, 0.227451, 0.262745, 1 )
+nine_patch_stretch = true
+stretch_margin_left = 6
+stretch_margin_top = 6
+stretch_margin_right = 6
+stretch_margin_bottom = 6

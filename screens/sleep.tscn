@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://fonts/monogram.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://images/progress-bar-atlas.png" type="Texture" id=2]
+[ext_resource path="res://screens/sleep.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=5]
+size = 80
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=6]
+default_font = SubResource( 5 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.278431, 0.278431, 0.278431, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 25.0
+expand_margin_right = 22.0
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 2 )
+region = Rect2( 2, 38, 156, 20 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 2 )
+region = Rect2( 2, 6, 156, 20 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 2 )
+region = Rect2( 2, 38, 156, 20 )
+
+[node name="SleepScreen" type="Control"]
+script = ExtResource( 3 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 360.0
+margin_bottom = 640.0
+rect_pivot_offset = Vector2( 863, -279 )
+color = Color( 0.145098, 0.145098, 0.145098, 1 )
+
+[node name="ZzzLabel" type="Label" parent="."]
+margin_left = 154.0
+margin_top = 60.0
+margin_right = 199.0
+margin_bottom = 106.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+text = "ZZZ.."
+align = 1
+
+[node name="ProgressBar" type="TextureProgress" parent="."]
+margin_left = 75.0
+margin_top = 318.0
+margin_right = 285.0
+margin_bottom = 348.0
+rect_min_size = Vector2( 1.36422e-12, 30 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+max_value = 10.0
+value = 5.0
+texture_under = SubResource( 9 )
+texture_over = SubResource( 10 )
+texture_progress = SubResource( 11 )
+texture_progress_offset = Vector2( 1.36422e-12, 1.36422e-12 )
+tint_under = Color( 0.294118, 0.294118, 0.294118, 1 )
+tint_over = Color( 0.564706, 0.564706, 0.564706, 1 )
+nine_patch_stretch = true
+stretch_margin_left = 6
+stretch_margin_top = 6
+stretch_margin_right = 6
+stretch_margin_bottom = 6
