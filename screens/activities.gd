@@ -11,7 +11,9 @@ func _ready():
 	$Buttons/GridContainer/Button7.connect("pressed", self, "_on_button_pressed", [7])
 	$Buttons/GridContainer/Button8.connect("pressed", self, "_on_button_pressed", [8])
 	$Buttons/GridContainer/Button9.connect("pressed", self, "_on_button_pressed", [9])
-		
+	$Background.color = Data.data.config.activities_bg_color
+	$Title/Background.color = Data.data.config.activities_bg_color_dark
+
 func _on_back_pressed():
 	print("Back clicked")
 	Utils.pop_overlay()

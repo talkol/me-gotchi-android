@@ -3,6 +3,8 @@ extends Control
 func _ready():
 	$Back/BackButton.connect("pressed", self, "_on_back_pressed")
 	State.connect("state_updated", self, "_on_state_updated")
+	$Background.color = Data.data.config.favorite_color_light
+	$Title/Background.color = Data.data.config.favorite_color
 	_on_state_updated(State.state)
 
 func _on_back_pressed():

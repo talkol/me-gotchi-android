@@ -5,6 +5,9 @@ func _ready():
 	$Buttons/StatsButton.connect("pressed", self, "_on_stats_pressed")
 	$Buttons/ActivitiesButton.connect("pressed", self, "_on_activities_pressed")
 	$Buttons/Restart/RestartButton.connect("pressed", self, "_on_restart_pressed")
+	$Name/Background.color = Data.data.config.favorite_color
+	$Header/DaysLabel.get_stylebox("normal").bg_color = Data.data.config.favorite_color
+	$Buttons/Background.color = Data.data.config.favorite_color_light
 	State.connect("state_updated", self, "_on_state_updated")
 	State.connect("state_emote", self, "_on_state_emote")
 	_on_state_updated(State.state)

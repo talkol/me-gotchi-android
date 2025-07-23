@@ -41,7 +41,7 @@ script = ExtResource( 2 )
 [node name="Background" type="ColorRect" parent="."]
 margin_right = 360.0
 margin_bottom = 640.0
-color = Color( 1, 0.333333, 0.823529, 1 )
+color = Color( 0.776471, 0.776471, 0.776471, 1 )
 
 [node name="Back" type="Node2D" parent="."]
 
@@ -72,7 +72,7 @@ color = Color( 0, 0, 0, 1 )
 [node name="Background" type="ColorRect" parent="Title"]
 margin_right = 360.0
 margin_bottom = 92.0
-color = Color( 0.529412, 0.184314, 0.537255, 1 )
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
 
 [node name="Label" type="Label" parent="Title"]
 margin_top = 12.0

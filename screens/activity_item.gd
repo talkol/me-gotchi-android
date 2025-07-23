@@ -5,7 +5,9 @@ var selected_item = null
 func _ready():
 	$Back/BackButton.connect("pressed", self, "_on_back_pressed")
 	$Button.connect("pressed", self, "_on_button_pressed")
-		
+	$Background.color = Data.data.config.activities_bg_color
+	$Title/Background.color = Data.data.config.activities_bg_color_dark
+	
 func _on_back_pressed():
 	print("Back clicked")
 	Utils.pop_overlay()

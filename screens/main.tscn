@@ -52,14 +52,17 @@ font_data = ExtResource( 3 )
 default_font = SubResource( 22 )
 
 [sub_resource type="AtlasTexture" id=7]
+flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 2, 38, 156, 20 )
 
 [sub_resource type="AtlasTexture" id=8]
+flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 2, 6, 156, 20 )
 
 [sub_resource type="AtlasTexture" id=9]
+flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 2, 38, 156, 20 )
 
@@ -68,7 +71,7 @@ size = 50
 font_data = ExtResource( 3 )
 
 [sub_resource type="StyleBoxFlat" id=11]
-bg_color = Color( 0.266667, 0.407843, 0.666667, 1 )
+bg_color = Color( 0.360784, 0.360784, 0.360784, 1 )
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -106,7 +109,7 @@ texture = SubResource( 1 )
 margin_top = 548.0
 margin_right = 360.0
 margin_bottom = 640.0
-color = Color( 0.65098, 0.901961, 0.913725, 1 )
+color = Color( 0.815686, 0.815686, 0.815686, 1 )
 
 [node name="StatsButton" type="TextureButton" parent="Buttons"]
 margin_left = 137.0
@@ -164,7 +167,7 @@ color = Color( 0, 0, 0, 1 )
 margin_top = 481.0
 margin_right = 360.0
 margin_bottom = 544.0
-color = Color( 0.266667, 0.407843, 0.666667, 1 )
+color = Color( 0.356863, 0.356863, 0.356863, 1 )
 
 [node name="Label" type="Label" parent="Name"]
 margin_top = 476.0

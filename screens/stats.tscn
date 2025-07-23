@@ -54,14 +54,17 @@ atlas = ExtResource( 3 )
 region = Rect2( 682, 682, 341, 341 )
 
 [sub_resource type="AtlasTexture" id=27]
+flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 2, 38, 156, 20 )
 
 [sub_resource type="AtlasTexture" id=26]
+flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 2, 6, 156, 20 )
 
 [sub_resource type="AtlasTexture" id=28]
+flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 2, 38, 156, 20 )
 
@@ -74,7 +77,7 @@ script = ExtResource( 2 )
 [node name="Background" type="ColorRect" parent="."]
 margin_right = 360.0
 margin_bottom = 640.0
-color = Color( 0.0941176, 0.772549, 0.835294, 1 )
+color = Color( 0.772549, 0.772549, 0.772549, 1 )
 
 [node name="Back" type="Node2D" parent="."]
 
@@ -105,7 +108,7 @@ color = Color( 0, 0, 0, 1 )
 [node name="Background" type="ColorRect" parent="Title"]
 margin_right = 360.0
 margin_bottom = 92.0
-color = Color( 0.266667, 0.407843, 0.666667, 1 )
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
 
 [node name="Label" type="Label" parent="Title"]
 margin_top = 12.0
