@@ -17,6 +17,8 @@ This directory contains the custom Android modifications needed to enable kiosk 
 
 ## Setup Instructions
 
+0. **Make sure default Android export is installed** through Godot (in android folder)
+
 1. **Run the setup script** to copy files to the build directory:
    ```bash
    cd android-app
@@ -28,7 +30,7 @@ This directory contains the custom Android modifications needed to enable kiosk 
 3. **Set up device owner** (requires factory reset):
    ```bash
    adb install your-app.apk
-   adb shell dpm set-device-owner com.godot.game/.KioskDeviceAdminReceiver
+   adb shell dpm set-device-owner com.megotchi.v1/.KioskDeviceAdminReceiver
    ```
 
 ## Features
