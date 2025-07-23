@@ -112,7 +112,7 @@
         "stamina_for_fun": 4,
         "stamina_for_exercise": 6,
         "stamina_for_sleep": 0,
-        "stamina_full_seconds": 60,
+        "stamina_full_seconds": 100,
         "sleep_full_seconds": 300
     }
 }
