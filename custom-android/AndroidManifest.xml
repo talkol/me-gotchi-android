@@ -31,7 +31,7 @@
     <!-- Any tag in this line after android:icon will be erased when doing custom builds. -->
     <!-- If you want to add tags manually, do before it. -->
     <!-- WARNING: This should stay on a single line until the parsing code is improved. See GH-32414. -->
-    <application android:label="@string/godot_project_name_string" android:allowBackup="false" android:isGame="true" android:hasFragileUserData="false" android:requestLegacyExternalStorage="false" tools:ignore="GoogleAppIndexingWarning" android:icon="@mipmap/icon">
+    <application android:label="@string/godot_project_name_string" android:allowBackup="false" android:isGame="true" android:hasFragileUserData="false" android:requestLegacyExternalStorage="false" tools:ignore="GoogleAppIndexingWarning" android:icon="@mipmap/icon" android:testOnly="true">
 
         <!-- Records the version of the Godot editor used for building -->
         <meta-data
@@ -67,16 +67,23 @@
             android:value="all" />
 
         <activity
-            android:name=".GodotApp"
+            android:name="com.megotchi.v1.GodotApp"
             android:label="@string/godot_project_name_string"
             android:theme="@style/GodotAppSplashTheme"
             android:launchMode="singleTask"
-            android:excludeFromRecents="false"
+            android:excludeFromRecents="true"
             android:exported="true"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
             android:resizeableActivity="false"
             android:lockTaskMode="if_whitelisted"
+            android:clearTaskOnLaunch="true"
+            android:finishOnTaskLaunch="false"
+            android:noHistory="false"
+            android:alwaysRetainTaskState="true"
+            android:stateNotNeeded="false"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true"
             tools:ignore="UnusedAttribute" >
 
             <!-- Focus awareness metadata is removed at export time if the xr mode is not VR. -->
@@ -98,8 +105,9 @@
 
         <!-- Device Admin Receiver for kiosk mode -->
         <receiver
-            android:name=".KioskDeviceAdminReceiver"
-            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            android:name="com.megotchi.v1.KioskDeviceAdminReceiver"
+            android:permission="android.permission.BIND_DEVICE_ADMIN"
+            android:exported="true">
             <meta-data
                 android:name="android.app.device_admin"
                 android:resource="@xml/device_admin_receiver" />
@@ -108,8 +116,13 @@
             </intent-filter>
         </receiver>
 
+        <!-- Kiosk Service to maintain kiosk mode -->
+        <service
+            android:name="com.megotchi.v1.KioskService"
+            android:exported="false" />
+
         <!-- Boot Receiver for auto-start -->
-        <receiver android:name=".BootReceiver" android:exported="false">
+        <receiver android:name="com.megotchi.v1.BootReceiver" android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>

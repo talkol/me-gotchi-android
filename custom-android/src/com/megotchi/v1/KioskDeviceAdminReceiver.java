@@ -1,4 +1,4 @@
-package com.godot.game;
+package com.megotchi.v1;
 
 import android.app.admin.DeviceAdminReceiver;
 

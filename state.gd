@@ -10,13 +10,13 @@ func now():
 func init_state():
 	state = {
 		"born": now(),
-		"last_food": int(now() - 0.2*Data.data.config.food_empty_seconds), # start food at 8
+		"last_food": int(now() - 0.3*Data.data.config.food_empty_seconds), # start food at 8
 		"food": int(10),
-		"last_drink": int(now() - 0.2*Data.data.config.drink_empty_seconds), # start drink at 8
+		"last_drink": int(now() - 0.3*Data.data.config.drink_empty_seconds), # start drink at 8
 		"drink": int(10),
-		"last_fun": int(now() - 0.2*Data.data.config.fun_empty_seconds), # start fun at 8
+		"last_fun": int(now() - 0.3*Data.data.config.fun_empty_seconds), # start fun at 8
 		"fun": int(10),
-		"last_exercise": int(now() - 0.2*Data.data.config.exercise_empty_seconds), # start exercise at 8
+		"last_exercise": int(now() - 0.3*Data.data.config.exercise_empty_seconds), # start exercise at 8
 		"exercise": int(10),
 		"last_sleep": now(),
 		"sleep": int(10),
