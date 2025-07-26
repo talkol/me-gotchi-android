@@ -10,13 +10,13 @@ func now():
 func init_state():
 	state = {
 		"born": now(),
-		"last_food": int(now() - 0.3*Data.data.config.food_empty_seconds), # start food at 8
+		"last_food": int(now() - 0.2 * Data.data.config.food_empty_seconds), # start food at 8
 		"food": int(10),
-		"last_drink": int(now() - 0.3*Data.data.config.drink_empty_seconds), # start drink at 8
+		"last_drink": int(now() - 0.2 * Data.data.config.drink_empty_seconds), # start drink at 8
 		"drink": int(10),
-		"last_fun": int(now() - 0.3*Data.data.config.fun_empty_seconds), # start fun at 8
+		"last_fun": int(now() - 0.2 * Data.data.config.fun_empty_seconds), # start fun at 8
 		"fun": int(10),
-		"last_exercise": int(now() - 0.3*Data.data.config.exercise_empty_seconds), # start exercise at 8
+		"last_exercise": int(now() - 0.2 * Data.data.config.exercise_empty_seconds), # start exercise at 8
 		"exercise": int(10),
 		"last_sleep": now(),
 		"sleep": int(10),
@@ -33,13 +33,13 @@ func init_state():
 	
 func update_views(timestamp):
 	if state != null:
-		print("State before update views: ",state)
+		# print("State before update views: ",state)
 		state.days = 1 + floor((timestamp - state.born) / Data.data.config.day_seconds)
-		state.food = max(0, ceil(10 - 10 * ((timestamp - state.last_food) / Data.data.config.food_empty_seconds) * ((timestamp - state.last_food) / Data.data.config.food_empty_seconds)))
-		state.drink = max(0, ceil(10 - 10 * ((timestamp - state.last_drink) / Data.data.config.drink_empty_seconds) * ((timestamp - state.last_drink) / Data.data.config.drink_empty_seconds)))
-		state.fun = max(0, ceil(10 - 10 * ((timestamp - state.last_fun) / Data.data.config.fun_empty_seconds) * ((timestamp - state.last_fun) / Data.data.config.fun_empty_seconds)))
-		state.exercise = max(0, ceil(10 - 10 * ((timestamp - state.last_exercise) / Data.data.config.exercise_empty_seconds) * ((timestamp - state.last_exercise) / Data.data.config.exercise_empty_seconds)))
-		state.sleep = max(0, ceil(10 - 10 * ((timestamp - state.last_sleep) / Data.data.config.sleep_empty_seconds) * ((timestamp - state.last_sleep) / Data.data.config.sleep_empty_seconds)))
+		state.food = max(0, ceil(10 * (1 - (timestamp - state.last_food) / Data.data.config.food_empty_seconds) * (1 - (timestamp - state.last_food) / Data.data.config.food_empty_seconds)))
+		state.drink = max(0, ceil(10 * (1 - (timestamp - state.last_drink) / Data.data.config.drink_empty_seconds) * (1 - (timestamp - state.last_drink) / Data.data.config.drink_empty_seconds)))
+		state.fun = max(0, ceil(10 * (1 - (timestamp - state.last_fun) / Data.data.config.fun_empty_seconds) * (1 - (timestamp - state.last_fun) / Data.data.config.fun_empty_seconds)))
+		state.exercise = max(0, ceil(10 * (1 - (timestamp - state.last_exercise) / Data.data.config.exercise_empty_seconds) * (1 - (timestamp - state.last_exercise) / Data.data.config.exercise_empty_seconds)))
+		state.sleep = max(0, ceil(10 * (1 - (timestamp - state.last_sleep) / Data.data.config.sleep_empty_seconds) * (1 - (timestamp - state.last_sleep) / Data.data.config.sleep_empty_seconds)))
 		state.hearts = min(state.food, min(state.drink, min(state.fun, min(state.exercise, state.sleep))))
 		if state.hearts != 0:
 			state.last_zero_hearts = timestamp
@@ -50,7 +50,7 @@ func update_views(timestamp):
 			state.stamina = min(10, state.stamina + stamina_gain)
 			state.last_stamina = timestamp
 		state.sleep_progress = min(10, round(10 * (timestamp - state.sleep_started) / Data.data.config.sleep_full_seconds))
-		print("State after update views: ",state)
+		# print("State after update views: ",state)
 
 func had_item(type, like):
 	var now = now()
