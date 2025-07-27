@@ -7,14 +7,14 @@ echo "1. Setting up kiosk mode files..."
 ./setup-kiosk-mode.sh
 
 # Build the APK
-echo "2. Building APK with custom package name..."
+echo "2. Building RELEASE APK with custom package name..."
 cd android/build
-./gradlew clean assembleDebug -Pexport_package_name=com.megotchi.v1 -Pdebug_keystore_file=../debug.keystore -Pperform_signing=true
+./gradlew clean assembleRelease -Pexport_package_name=com.megotchi.v1 -Pdebug_keystore_file=../debug.keystore -Prelease_keystore_file=../../release.keystore -Prelease_keystore_password=trustno1 -Prelease_keystore_alias=megotchi -Pperform_signing=true
 
 # Check if build was successful
 if [ $? -eq 0 ]; then
             echo "3. Build successful! Installing APK..."
-        adb install -r -t build/outputs/apk/debug/android_debug.apk
+        adb install -r -t build/outputs/apk/release/android_release.apk
     
     if [ $? -eq 0 ]; then
         echo "4. APK installed successfully!"

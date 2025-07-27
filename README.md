@@ -7,12 +7,14 @@
 3. USB Debugging enabled
 4. Device connected via USB
 5. ADB authorized on device
-6. `debug.keystore` file placed in the `android-app/` directory (for APK signing)
+6. `release.keystore` file placed in the `android-app/` directory (for production APK signing)
    
-   **If you don't have a debug.keystore file, create one with:**
+   **If you don't have a release.keystore file, create one with:**
    ```bash
-   keytool -genkey -v -keystore debug.keystore -alias androiddebugkey -keyalg RSA -keysize 2048 -validity 10000 -storepass android -keypass android -dname "CN=Android Debug,O=Android,C=US"
+   keytool -genkey -v -keystore release.keystore -alias megotchi -keyalg RSA -keysize 2048 -validity 10000
    ```
+   
+   **Note:** The release keystore is used for production builds and should be kept secure. The debug.keystore is used for development builds and can be shared with the team. The release keystore password should be "trustno1".
 
 ## Quick Setup (Recommended)
 
@@ -38,12 +40,12 @@ This script will:
 ### 2. Build the APK
 ```bash
 cd android/build
-./gradlew clean assembleDebug -Pexport_package_name=com.megotchi.v1
+./gradlew clean assembleRelease -Pexport_package_name=com.megotchi.v1 -Prelease_keystore_file=../../release.keystore -Prelease_keystore_password=trustno1 -Prelease_keystore_alias=megotchi -Pperform_signing=true
 ```
 
 ### 3. Install the APK
 ```bash
-adb install -r -t build/outputs/apk/debug/android_debug.apk
+adb install -r -t build/outputs/apk/release/android_release.apk
 ```
 
 ### 4. Set device owner

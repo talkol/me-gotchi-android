@@ -63,6 +63,10 @@ temp/
 *.aar
 *.jar
 
+# Keystore files (security)
+release.keystore
+*.jks
+
 # Gradle files (if not needed for version control)
 gradle/
 .gradle/ 
