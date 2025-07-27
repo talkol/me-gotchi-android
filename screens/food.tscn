@@ -2,7 +2,7 @@
 
 [ext_resource path="res://fonts/monogram.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://screens/food.gd" type="Script" id=2]
-[ext_resource path="res://images/food-atlas.png" type="Texture" id=3]
+[ext_resource path="res://textures/food-atlas.tres" type="Texture" id=4]
 
 [sub_resource type="Gradient" id=18]
 interpolation_mode = 1
@@ -29,47 +29,47 @@ default_font = SubResource( 20 )
 
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 4 )
 region = Rect2( 1.36422e-12, 1.36422e-12, 341, 341 )
 
 [sub_resource type="AtlasTexture" id=10]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 4 )
 region = Rect2( 341, 1.36422e-12, 341, 341 )
 
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 4 )
 region = Rect2( 682, 1.36422e-12, 341, 341 )
 
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 4 )
 region = Rect2( 1.36422e-12, 341, 341, 341 )
 
 [sub_resource type="AtlasTexture" id=13]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 4 )
 region = Rect2( 341, 341, 341, 341 )
 
 [sub_resource type="AtlasTexture" id=14]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 4 )
 region = Rect2( 682, 341, 341, 341 )
 
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 4 )
 region = Rect2( 1.36422e-12, 682, 341, 341 )
 
 [sub_resource type="AtlasTexture" id=16]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 4 )
 region = Rect2( 341, 682, 341, 341 )
 
 [sub_resource type="AtlasTexture" id=17]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 4 )
 region = Rect2( 682, 682, 341, 341 )
 
 [node name="FoodScreen" type="Control"]

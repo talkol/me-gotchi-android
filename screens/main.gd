@@ -55,7 +55,7 @@ func _on_state_updated(state):
 		$Buttons/StatsButton.visible = true
 		$Buttons/Restart.visible = false
 		$Name/Label.text = Data.data.config.name
-	$Background/Environment.texture = load("res://images/background" + str(1+int(state.days)%4) + ".jpg")
+	$Background/Environment.texture = load("res://textures/background" + str(1+int(state.days)%4) + ".tres")
 	$Background/Environment.position.x = round(OS.get_datetime().hour/23.0 * (get_viewport().size.x - $Background/Environment.texture.get_size().x * $Background/Environment.scale.x))
 	if !days_temp_changed:
 		var must_change = false

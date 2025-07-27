@@ -8,6 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "AtlasTexture",
+"class": "CustomAtlasTexture",
+"language": "GDScript",
+"path": "res://custom_atlas_texture.gd"
+}, {
+"base": "ImageTexture",
+"class": "CustomImageTexture",
+"language": "GDScript",
+"path": "res://custom_image_texture.gd"
+} ]
+_global_script_class_icons={
+"CustomAtlasTexture": "",
+"CustomImageTexture": ""
+}
+
 [application]
 
 config/name="Me-gotchi"
@@ -31,6 +47,8 @@ window/stretch/aspect="keep"
 [global]
 
 autoload=true
+import=false
+android=false
 
 [gui]
 

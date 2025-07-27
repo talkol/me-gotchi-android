@@ -2,7 +2,7 @@
 
 [ext_resource path="res://fonts/monogram.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://screens/food_item.gd" type="Script" id=2]
-[ext_resource path="res://images/food-atlas.png" type="Texture" id=3]
+[ext_resource path="res://textures/food-atlas.tres" type="Texture" id=3]
 
 [sub_resource type="Gradient" id=5]
 interpolation_mode = 1

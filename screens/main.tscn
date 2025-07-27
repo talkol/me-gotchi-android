@@ -1,9 +1,9 @@
 [gd_scene load_steps=23 format=2]
 
-[ext_resource path="res://images/face-atlas.png" type="Texture" id=1]
+[ext_resource path="res://textures/face-atlas.tres" type="Texture" id=1]
 [ext_resource path="res://images/main-buttons-atlas.png" type="Texture" id=2]
 [ext_resource path="res://fonts/monogram.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://images/background1.jpg" type="Texture" id=4]
+[ext_resource path="res://textures/background1.tres" type="Texture" id=4]
 [ext_resource path="res://screens/main.gd" type="Script" id=5]
 [ext_resource path="res://images/progress-bar-atlas.png" type="Texture" id=6]
 [ext_resource path="res://data/hearts.tscn" type="PackedScene" id=7]
