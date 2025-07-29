@@ -1,118 +1,118 @@
 {
-    "food": [
-        {
-            "name": "Pizza",
-            "type": "food",
-            "like": true
-        },
-        {
-            "name": "Hotdog",
-            "type": "food",
-            "like": true
-        },
-        {
-            "name": "Hamburger",
-            "type": "food",
-            "like": true
-        },
-        {
-            "name": "Brocolli",
-            "type": "food",
-            "like": true
-        },
-        {
-            "name": "Steak",
-            "type": "food",
-            "like": false
-        },
-        {
-            "name": "Banana",
-            "type": "food",
-            "like": false
-        },
-        {
-            "name": "Milk",
-            "type": "drink",
-            "like": false
-        },
-        {
-            "name": "Water",
-            "type": "drink",
-            "like": true
-        },
-        {
-            "name": "Apple Juice",
-            "type": "drink",
-            "like": true
-        }
-    ],
-    "activities": [
-        {
-            "name": "PlayStation",
-            "type": "fun",
-            "like": true
-        },
-        {
-            "name": "Minecraft",
-            "type": "fun",
-            "like": true
-        },
-        {
-            "name": "Read",
-            "type": "fun",
-            "like": true
-        },
-        {
-            "name": "Moonball",
-            "type": "exercise",
-            "like": true
-        },
-        {
-            "name": "Football",
-            "type": "exercise",
-            "like": true
-        },
-        {
-            "name": "Rugby",
-            "type": "exercise",
-            "like": false
-        },
-        {
-            "name": "Sleep",
-            "type": "sleep",
-            "like": true
-        },
-        {
-            "name": "Saxophone",
-            "type": "fun",
-            "like": false
-        },
-        {
-            "name": "Guitar",
-            "type": "fun",
-            "like": false
-        }
-    ],
-    "config": {
-        "name": "LEO",
-        "favorite_color": "#4468aa",
-        "favorite_color_light": "#a6e6e9",
-        "food_bg_color": "#ff55d2",
-        "food_bg_color_dark": "#872f89",
-        "activities_bg_color": "#ff5571",
-        "activities_bg_color_dark": "#9d0219",
-        "day_seconds": 86400,
-        "food_empty_seconds": 280000,
-        "drink_empty_seconds": 130000,
-        "fun_empty_seconds": 170000,
-        "exercise_empty_seconds": 350000,
-        "sleep_empty_seconds": 260000,
-        "stamina_for_food": 4,
-        "stamina_for_drink": 4,
-        "stamina_for_fun": 4,
-        "stamina_for_exercise": 6,
-        "stamina_for_sleep": 0,
-        "stamina_full_seconds": 100,
-        "sleep_full_seconds": 300
+  "food": [
+    {
+      "name": "SUSHI",
+      "type": "food",
+      "like": true
+    },
+    {
+      "name": "LAMB SKEWER",
+      "type": "food",
+      "like": true
+    },
+    {
+      "name": "GARLICBREAD",
+      "type": "food",
+      "like": true
+    },
+    {
+      "name": "BEEF",
+      "type": "food",
+      "like": false
+    },
+    {
+      "name": "AUBERGINE",
+      "type": "food",
+      "like": false
+    },
+    {
+      "name": "PICKLES",
+      "type": "food",
+      "like": false
+    },
+    {
+      "name": "LEMONADE",
+      "type": "drink",
+      "like": true
+    },
+    {
+      "name": "JUICE",
+      "type": "drink",
+      "like": true
+    },
+    {
+      "name": "MILK",
+      "type": "drink",
+      "like": false
     }
+  ],
+  "activities": [
+    {
+      "name": "PIANO",
+      "type": "fun",
+      "like": true
+    },
+    {
+      "name": "READING",
+      "type": "fun",
+      "like": true
+    },
+    {
+      "name": "PAINTING",
+      "type": "fun",
+      "like": true
+    },
+    {
+      "name": "CLEANING",
+      "type": "fun",
+      "like": false
+    },
+    {
+      "name": "WRITING",
+      "type": "fun",
+      "like": false
+    },
+    {
+      "name": "CLIMBING",
+      "type": "exercise",
+      "like": true
+    },
+    {
+      "name": "NETBALL",
+      "type": "exercise",
+      "like": true
+    },
+    {
+      "name": "HOCKEY",
+      "type": "exercise",
+      "like": false
+    },
+    {
+      "name": "SLEEP",
+      "type": "sleep",
+      "like": true
+    }
+  ],
+  "config": {
+    "name": "ARYA",
+    "favorite_color": "#8b83e5",
+    "favorite_color_light": "#ffffff",
+    "food_bg_color": "#8bd1fd",
+    "food_bg_color_dark": "#228cce",
+    "activities_bg_color": "#a3de8e",
+    "activities_bg_color_dark": "#5a8849",
+    "day_seconds": 86400,
+    "food_empty_seconds": 280000,
+    "drink_empty_seconds": 130000,
+    "fun_empty_seconds": 170000,
+    "exercise_empty_seconds": 350000,
+    "sleep_empty_seconds": 260000,
+    "stamina_for_food": 4,
+    "stamina_for_drink": 4,
+    "stamina_for_fun": 4,
+    "stamina_for_exercise": 6,
+    "stamina_for_sleep": 0,
+    "stamina_full_seconds": 60,
+    "sleep_full_seconds": 300
+  }
 }
