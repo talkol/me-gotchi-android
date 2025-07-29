@@ -6,7 +6,6 @@
     android:installLocation="auto" >
 
     <!-- Kiosk mode permissions -->
-    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.BIND_DEVICE_ADMIN"/>
 
@@ -82,8 +81,6 @@
             android:noHistory="false"
             android:alwaysRetainTaskState="true"
             android:stateNotNeeded="false"
-            android:showWhenLocked="true"
-            android:turnScreenOn="true"
             tools:ignore="UnusedAttribute" >
 
             <!-- Focus awareness metadata is removed at export time if the xr mode is not VR. -->
@@ -116,10 +113,7 @@
             </intent-filter>
         </receiver>
 
-        <!-- Kiosk Service to maintain kiosk mode -->
-        <service
-            android:name="com.megotchi.v1.KioskService"
-            android:exported="false" />
+
 
         <!-- Boot Receiver for auto-start -->
         <receiver android:name="com.megotchi.v1.BootReceiver" android:exported="true">

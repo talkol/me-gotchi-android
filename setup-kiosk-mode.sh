@@ -2,6 +2,7 @@
 
 # Setup script for kiosk mode modifications
 # This script copies the custom kiosk mode files to the Android build directory
+# Note: Uses basic kiosk mode without aggressive foreground service for better sleep compatibility
 
 echo "Setting up kiosk mode for Android build..."
 
@@ -33,4 +34,5 @@ echo "Copying modified AndroidManifest.xml..."
 cp custom-android/AndroidManifest.xml android/build/
 
 echo "Kiosk mode setup complete!"
-echo "You can now build your Android app with kiosk mode enabled." 
+echo "You can now build your Android app with kiosk mode enabled."
+echo "Note: This version allows normal sleep behavior while maintaining kiosk restrictions." 

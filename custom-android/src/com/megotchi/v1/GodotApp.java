@@ -68,11 +68,6 @@ public class GodotApp extends FullScreenGodotApp {
 				// Start lock task mode (kiosk mode)
 				startLockTask();
 				System.out.println("GodotApp: startLockTask() called");
-				
-				// Start kiosk service to maintain kiosk mode
-				Intent serviceIntent = new Intent(this, KioskService.class);
-				startService(serviceIntent);
-				System.out.println("GodotApp: KioskService started");
 			} else {
 				System.out.println("GodotApp: App is NOT device owner - kiosk mode not available");
 			}
@@ -91,8 +86,7 @@ public class GodotApp extends FullScreenGodotApp {
 			event.getKeyCode() == KeyEvent.KEYCODE_MENU ||
 			event.getKeyCode() == KeyEvent.KEYCODE_SEARCH ||
 			event.getKeyCode() == KeyEvent.KEYCODE_VOLUME_UP ||
-			event.getKeyCode() == KeyEvent.KEYCODE_VOLUME_DOWN ||
-			event.getKeyCode() == KeyEvent.KEYCODE_POWER) {
+			event.getKeyCode() == KeyEvent.KEYCODE_VOLUME_DOWN) {
 			System.out.println("GodotApp: Blocking keyCode at dispatch level: " + event.getKeyCode());
 			return true; // Consume the event, don't let it propagate
 		}
@@ -109,8 +103,7 @@ public class GodotApp extends FullScreenGodotApp {
 			keyCode == KeyEvent.KEYCODE_MENU ||
 			keyCode == KeyEvent.KEYCODE_SEARCH ||
 			keyCode == KeyEvent.KEYCODE_VOLUME_UP ||
-			keyCode == KeyEvent.KEYCODE_VOLUME_DOWN ||
-			keyCode == KeyEvent.KEYCODE_POWER) {
+			keyCode == KeyEvent.KEYCODE_VOLUME_DOWN) {
 			System.out.println("GodotApp: Blocking keyCode: " + keyCode);
 			return true; // Consume the event, don't let it propagate
 		}
@@ -127,8 +120,7 @@ public class GodotApp extends FullScreenGodotApp {
 			keyCode == KeyEvent.KEYCODE_MENU ||
 			keyCode == KeyEvent.KEYCODE_SEARCH ||
 			keyCode == KeyEvent.KEYCODE_VOLUME_UP ||
-			keyCode == KeyEvent.KEYCODE_VOLUME_DOWN ||
-			keyCode == KeyEvent.KEYCODE_POWER) {
+			keyCode == KeyEvent.KEYCODE_VOLUME_DOWN) {
 			System.out.println("GodotApp: Blocking keyCode on key up: " + keyCode);
 			return true; // Consume the event
 		}
@@ -143,8 +135,7 @@ public class GodotApp extends FullScreenGodotApp {
 			keyCode == KeyEvent.KEYCODE_HOME ||
 			keyCode == KeyEvent.KEYCODE_APP_SWITCH ||
 			keyCode == KeyEvent.KEYCODE_MENU ||
-			keyCode == KeyEvent.KEYCODE_SEARCH ||
-			keyCode == KeyEvent.KEYCODE_POWER) {
+			keyCode == KeyEvent.KEYCODE_SEARCH) {
 			System.out.println("GodotApp: Blocking keyCode on long press: " + keyCode);
 			return true; // Consume the event
 		}
@@ -161,21 +152,13 @@ public class GodotApp extends FullScreenGodotApp {
 
 	@Override
 	public void onPause() {
-		// Prevent the app from being paused/backgrounded
+		// Allow normal pause behavior for sleep functionality
 		super.onPause();
-		// Try to bring the app back to foreground
-		Intent intent = new Intent(this, GodotApp.class);
-		intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-		startActivity(intent);
 	}
 
 	@Override
 	public void onStop() {
-		// Prevent the app from being stopped
+		// Allow normal stop behavior for sleep functionality
 		super.onStop();
-		// Try to bring the app back to foreground
-		Intent intent = new Intent(this, GodotApp.class);
-		intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-		startActivity(intent);
 	}
 }
