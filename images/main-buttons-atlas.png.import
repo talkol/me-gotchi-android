@@ -14,7 +14,7 @@ dest_files=[ "res://.import/main-buttons-atlas.png-b077d9e2111157afcc8614551f5a7
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

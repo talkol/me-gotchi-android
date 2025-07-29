@@ -2,7 +2,7 @@
 
 echo "=== Building and Installing Kiosk Mode APK ==="
 
-echo "Did you remember to export Android from Godot? (this updates the assets, build will probably fail)
+echo "Did you remember to export Android from Godot? (this updates the assets, build will probably fail)"
 
 # Set up kiosk mode
 echo "1. Setting up kiosk mode files..."

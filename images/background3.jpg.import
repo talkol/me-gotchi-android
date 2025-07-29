@@ -14,7 +14,7 @@ dest_files=[ "res://.import/background3.jpg-c0b3a93178076553b33788f1bbeebd97.ste
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

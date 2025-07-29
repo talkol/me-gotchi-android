@@ -14,7 +14,7 @@ dest_files=[ "res://.import/food-atlas.png-f85b374f7ffa2e04259af72f9298f0b5.stex
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
