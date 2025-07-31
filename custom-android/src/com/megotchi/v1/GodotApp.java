@@ -39,6 +39,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.WindowManager;
 
 /**
  * Template activity for Godot Android custom builds.
@@ -49,6 +50,8 @@ public class GodotApp extends FullScreenGodotApp {
 	public void onCreate(Bundle savedInstanceState) {
 		// Use the parent class's theme setting instead of explicit R reference
 		super.onCreate(savedInstanceState);
+		// Clear Godot's default keep screen on flag so device can sleep
+		getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
 		System.out.println("GodotApp: onCreate() called - initializing kiosk mode");
 
@@ -148,6 +151,13 @@ public class GodotApp extends FullScreenGodotApp {
 		// This prevents the app from being closed
 		System.out.println("GodotApp: onBackPressed() called - blocking back button");
 		// Don't call super.onBackPressed() to prevent default behavior
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		// Clear keep screen on flag again in case Godot re-sets it
+		getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 	}
 
 	@Override
